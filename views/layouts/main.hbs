@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Collab Whiteboard</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Yusei+Magic" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection" />
+	<script type="text/javascript" src="/js/fabric.js"></script>
+
+</head>
+
+<body>
+	<nav>
+		<div class="nav-wrapper">
+			<header>
+				<a href="/" class="brand-logo">Collaborate</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li>
+						<input placeholder="Search Boards" data-target="search" type="search" class="input-field">
+					</li>
+					<li><button data-target="signup-modal" class="btn modal-trigger">signup</button></li>
+					<li><button data-target="login-modal" class="btn modal-trigger">login</button></li>
+				</ul>
+			</header>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li>
+			<form>
+				<input placeholder="Search a Subject" id="search" type="text" class="validate">
+			</form>
+		</li>
+		<li>Login</li>
+	</ul>
+
+	{{> login-modal}}
+	{{> signup-modal}}
+
+	<main>
+		{{{ body }}}
+	</main>
+
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
+	<script type="text/javascript" src="/js/board_controller.js"></script>
+	<script type="text/javascript" src="/js/drawing.js"></script>
+
+
+</body>
+
+</html>
