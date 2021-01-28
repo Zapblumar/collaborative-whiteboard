@@ -3,6 +3,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,6 +23,7 @@ app.engine('hbs', exphbs({
   defaultLayout: 'main',
   layoutsDir: __dirname + '/views/layouts',
   partialsDir: __dirname + '/views/partials',
+  helpers
 }));
 
 
