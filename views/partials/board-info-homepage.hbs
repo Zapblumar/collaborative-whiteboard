@@ -1,16 +1,15 @@
-<div class="col s6 m6">
-  <div class="card hoverable">
+<div class="col s12 m12 l6">
+  <div class="card medium hoverable">
     <div class="card-image">
-      {{!-- use image of whiteboard here instead of a set image --}}
+      {{!-- replace with image of whiteboard instead of a set image --}}
       <img src="/images/whiteboard-example.png">
-      <a href="/board/{{id}}" class="btn-floating halfway-fab waves-effect waves-light"
-        style="background: var(--color-vermillion)"><i class="material-icons">pageview</i></a>
     </div>
     <div class="card-content">
-      <span class="card-title">
-        <a class="board-title">{{title}}</a>
-      </span>
+      <span class="card-title board-title">{{title}}</span>
       <p class="sans-serif">by {{user.username}} on {{format_date created_at}}</p>
+    </div>
+    <div class="card-action">
+      <a href="/board/{{id}}">View this board</a>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Board = require('./Board');
+const Board = require('./board.js');
 
 
 // create User model

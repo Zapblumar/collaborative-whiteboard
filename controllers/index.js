@@ -1,16 +1,18 @@
 const router = require('express').Router();
-const apiRoutes = require('./api');
-// const htmlRoutes = require('./html/html-routes');
-const homeRoutes = require('./home-routes.js');
-const profileRoutes = require('./profile-routes.js');
-const boardRoutes = require('./single-board-routes.js');
+const userRoutes = require('./api/user-routes.js');
+const boardRoutes = require('./api/board-routes.js');
+const homeRoutes = require('./html/home-routes.js');
+const profileRoutes = require('./html/profile-routes.js');
+const singleBoardRoutes = require('./html/single-board-routes.js');
 
+// api-routes
+router.use('/users', userRoutes);
+router.use('/boards', boardRoutes);
 
-// router.use('/', htmlRoutes);
+//html-routes
 router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
 router.use('/profile', profileRoutes);
-router.use('/board', boardRoutes);
+router.use('/board', singleBoardRoutes);
 
 router.use((req, res) => {
   res.status(404).end();

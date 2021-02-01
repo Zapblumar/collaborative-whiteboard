@@ -1,16 +1,20 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Board, User } = require('../models');
-const withAuth = require('../utils/auth');
+const sequelize = require('../../config/connection');
+const { Board, User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get('/:id', (req, res) => {
-  Board.findOne({
+router.get('/', (req, res) => {
+  Board.findAll({
+    // where: {
+    //   user_id: req.params.user_id
+    // },
     where: {
-      id: req.params.id
+      // use the ID from the session
+      user_id: req.session.user_id
     },
     attributes: [
       'id',
-      // 'board_content',
+      'board_content',
       'title',
       'description',
       'created_at'

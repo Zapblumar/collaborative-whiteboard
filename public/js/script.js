@@ -7,16 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // modal trigger
 document.addEventListener('DOMContentLoaded', () => {
-  var elems = document.querySelectorAll('.modal');
-  let options = [];
-  var instances = M.Modal.init(elems, options);
+  const elems = document.querySelectorAll('.modal');
+  let options = {
+    onOpenEnd: () => {
+      // Get the open modal and set focus on the first input element.
+      elems.forEach((modal) => {
+        if (M.Modal.getInstance(modal).isOpen) {
+          modal.querySelector('input:nth-child(1)').focus();
+        }
+      })
+    }
+  };
+  const instances = M.Modal.init(elems, options);
 });
 
 // confirm password on register after entering confirm password
-const passwordEl = document.getElementById('password');
-const confirmPasswordEl = document.getElementById('confirm_password');
+const passwordEl = document.getElementById('reg_password');
+const confirmPasswordEl = document.getElementById('reg_confirm_password');
 confirmPasswordEl.addEventListener('keyup', () => {
-  console.log('lah');
   if (confirmPasswordEl.value !== passwordEl.value) {
     confirmPasswordEl.setCustomValidity('Passwords Do Not Match')
   } else {

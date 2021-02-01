@@ -7,6 +7,7 @@
   --color-egg-shell: #f0ead6;
   --color-forest: #10491e;
   --color-leaf: #7b7200;
+  --color-egg-shell: #f1eff1;
 }
 
 body {
@@ -52,6 +53,11 @@ nav input[type="search"]:focus {
   color: #111111;
 }
 
+.page-footer {
+  background-color: var(--color-dark-blue);
+  color: var(--color-gold);
+}
+
 .modal {
   background-color: var(--color-baby-blue);
 }
@@ -72,6 +78,28 @@ nav input[type="search"]:focus {
 
 .btn {
   background-color: var(--color-gold);
+}
+
+.btn-info {
+  width: 100%;
+  text-align: left;
+}
+
+.btn.waves-effect {
+    height: auto;
+    min-height: 20px;
+    line-height: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 50px;
+}
+
+.btn.waves-effect .material-icons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px;
+    margin-left: 0;
 }
 
 .btn:hover {
@@ -114,7 +142,7 @@ nav input[type="search"]:focus {
 }
 
 #c {
-  background-color: rgb(113, 98, 122);
-  border: 10px double magenta;
+  background-color: var(--color-egg-shell);
+  border: 3px solid black;
   border-radius: 10px;
 }

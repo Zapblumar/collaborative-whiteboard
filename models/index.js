@@ -1,5 +1,5 @@
-const User = require('./User');
-const Board = require('./Board');
+const User = require('./user.js');
+const Board = require('./board.js');
 
 // associations
 User.hasMany(Board, {

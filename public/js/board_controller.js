@@ -34,4 +34,3 @@ var text = new fabric.Text('hello world', { left: 150, top: 150 });
 // canvas.add(text);
 
 canvas.renderAll();
-

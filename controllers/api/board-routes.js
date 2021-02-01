@@ -5,7 +5,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 
-// GET /api/boards
+// GET /boards
 router.get('/', (req, res) => {
   Board.findAll({
     order: [['created_at', 'DESC']],
@@ -13,13 +13,13 @@ router.get('/', (req, res) => {
       'id',
       'title',
       'description',
-      // 'board_content',
+      'board_content',
       'created_at',
     ],
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ['user_id']
       }
     ]
   })
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/boards/1
+// GET /boards/1
 router.get('/:id', (req, res) => {
   Board.findOne({
     where: {
@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
       'id',
       'title',
       'description',
-      // 'board_content',
+      'board_content',
       'created_at',
     ],
     include: [
@@ -63,12 +63,13 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST /api/boards
+// POST /boards
 router.post('/', (req, res) => {
   Board.create({
     title: req.body.title,
-    // board_content: req.body.board_content,
-    user_id: req.session.user_id
+    description: req.body.description,
+    board_content: JSON.stringify(req.body.board_content),
+    user_id: req.session.user_id,
   })
     .then(dbBoardData => res.json(dbBoardData))
     .catch(err => {
@@ -81,7 +82,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Board.update({
     title: req.body.title,
-    post_content: req.body.post_content
+    description: req.body.description,
+    board_content: JSON.stringify(req.body.board_content),
   },
     {
       where: {

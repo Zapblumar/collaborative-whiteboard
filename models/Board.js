@@ -1,11 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
+const User = require('./user.js');
 
-// create Board model
 class Board extends Model { }
 
-// define table columns and configuration
 Board.init(
   {
     id: {
@@ -22,10 +20,10 @@ Board.init(
       type: DataTypes.STRING(750),
       allowNull: false
     },
-    // board_content: {
-    //   type: DataTypes.JSON,
-    //   allowNull: false,
-    // },
+    board_content: {
+      type: DataTypes.TEXT(),
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

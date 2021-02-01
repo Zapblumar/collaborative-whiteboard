@@ -1,30 +1,39 @@
-# collaborative-whiteboard
-A collaborative whiteboard for sharing ideas.
+# Collaborate
 
-# Libraries to use
-express
-handlebars
-express-handlebars
-materialize
-bcrypt
-sequelize
-mysql2
-express-session
-fabric
+## Description
+A collaborative whiteboard for sharing ideas: Whether you're creating a MMORPG or designing an event, this is the place to share and develop your ideas with collaborators.
 
-# deployment
-Heroku
-github
+## Deployment
+Collaborate is published via Heroku at:
 
-# example of .env code
+Get a feel for the application in the below screenshots...
+![Collaborate Homepage](./public/images/homepage.png)
+![Collaborate Profile Page](./public/images/profile.png)
+
+## Technologies Used
+* express
+* handlebars
+* express-handlebars
+* materialize
+* bcrypt
+* sequelize
+* mysql2
+* express-session
+* fabric
+
+## Example of .env file that will be needed
 DB_NAME='collaborative_whiteboard_db'
 DB_USER=
 DB_PW=
 
 SEQUELIZE_STORE=
 
+## Authors
+* Kristin Moon
+* Tylor Paggi
+* Joe Riley
 
-# Userstory
+<!-- # Userstory
 ## As a user
 * When I log onto the site I am presented with a page that allows me to login or sign up
 * And in the body I can see public whiteboards
@@ -61,4 +70,4 @@ SEQUELIZE_STORE=
 
 ## As a user I can get a link to my board to send it out to fellow collaborators
 
-## As a user I am able to use urls to add images to the board.
+## As a user I am able to use urls to add images to the board. -->
